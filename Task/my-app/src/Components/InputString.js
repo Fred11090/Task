@@ -2,6 +2,7 @@ import React from 'react';
 import { Form, Input, Button } from 'reactstrap';
 
 function InputString(props)  {
+    
     return (
         <Form onSubmit={props.onInputSubmit} className="inputString">
             <p>

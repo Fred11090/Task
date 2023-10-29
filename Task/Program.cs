@@ -30,4 +30,4 @@ app.UseSpa(spa =>
 app.UseCors(corsBuilder => corsBuilder.AllowAnyOrigin()
     .AllowAnyHeader());
 
-app.Run();;
+app.Run();
