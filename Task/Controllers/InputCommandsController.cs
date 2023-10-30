@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Task.Controllers;
 
-[ApiController, Route("InputCommands")] 
+[ApiController, Route("inputCommands")] 
 public class InputCommandsController : Controller
 {
     private readonly InputCommandContext _context;
@@ -13,13 +13,13 @@ public class InputCommandsController : Controller
         _context = context;
     }
 
-    [HttpGet("GetHistory")]
+    [HttpGet("getHistory")]
     public Task<List<InputCommand>> GetCommandHistory()
     {
         return _context.Commands.ToListAsync();
     }
     
-    [HttpPost("ToExecute")]
+    [HttpPost("toExecute")]
     public async Task<string> PostCommandToProcess([FromBody] string input)
     { 
         var itemToDataBase = new InputCommand { Input = input};

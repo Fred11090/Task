@@ -8,7 +8,7 @@ builder.Services.AddControllers();
 builder.Services.AddCors();
 builder.Services.AddSpaStaticFiles(configuration =>
 {
-    configuration.RootPath = "client-app/build";
+    configuration.RootPath = "my-app/build";
 });
 var connection = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<InputCommandContext>(options => options.UseSqlServer(connection));

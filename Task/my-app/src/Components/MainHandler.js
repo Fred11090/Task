@@ -1,18 +1,18 @@
-import React from 'react';
+import React,{useState,useEffect} from 'react';
 import InputString from './InputString';
 import OutputArea from './OutputArea';
 
 function MainHandler() {
-    const [input, setInput] = React.useState('');
-    const [output, setOutput] = React.useState('');
-    const [inputList, setInputList] = React.useState([]);
-    const [maxLength, setMaxLength] = React.useState(0);
-    const [currentPos, setCurrentPos] = React.useState(0);
+    const [input, setInput] = useState('');
+    const [output, setOutput] = useState('');
+    const [inputList, setInputList] = useState([]);
+    const [maxLength, setMaxLength] = useState(0);
+    const [currentPos, setCurrentPos] = useState(0);
 
-    const inputChange = (e) => setInput(e.target.value);
+    const inputChange = (event) =>setInput(event.target.value)
 
-    async function getHistory() {
-        const response = await fetch(`http://localhost:5294/InputCommands/GetHistory`)
+    const getHistory = async () => {
+        const response = await fetch(`http://localhost:5294/inputCommands/getHistory`)
         const stateList = await response.json();
         const inputArray = (stateList.map(n => n.input))
         setInputList(inputArray)
@@ -21,7 +21,7 @@ function MainHandler() {
         setInput(inputArray[inputArray.length -1])
     }
     
-    React.useEffect( () => {
+    useEffect( () => {
          getHistory()
     }, [] );
 
@@ -31,7 +31,7 @@ function MainHandler() {
         setCurrentPos(inputList.length)
     },[output])
 
-    function pushArrow(event){
+    const pushArrow = (event) => {
         if (event.key === "ArrowUp" && currentPos > 0) {
             setInput(inputList[currentPos -1])
             setCurrentPos(currentPos -1)
@@ -43,13 +43,13 @@ function MainHandler() {
         }
     }
     
-    async function onSubmit (event) {
+    const onSubmit = async (event) => {
         event.preventDefault();
         if (input <= 0){
             alert('The input field should`t be empty')
             return
         }
-        const response = await fetch(`http://localhost:5294/InputCommands/ToExecute`, {
+        const response = await fetch(`http://localhost:5294/inputCommands/toExecute`, {
             method: 'post',
             headers: {
                 'Content-Type': 'application/json'
