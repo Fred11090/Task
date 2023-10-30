@@ -4,20 +4,16 @@ import { Form, Input, Button } from 'reactstrap';
 const InputString = (props) => {
     
     return (
-        <Form onSubmit={props.onInputSubmit} className="inputString">
-            <p>
-                <label>Enter the command for PowerShell</label><br />
+        <Form id="inputString" onSubmit={props.onInputSubmit}>
                 <Input
+                    id="input"
                     type="text"
                     name="input"
                     value={props.input}
                     onChange={props.onInputChange}
                     onKeyDown={props.onPushArrow}
                 />
-            </p>
-            <p>
-                <Button type="submit">Execute</Button>
-            </p>
+                <Button id="button" type="submit">Execute</Button>
         </Form>
     );
 }

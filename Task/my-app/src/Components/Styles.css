@@ -1,0 +1,25 @@
+body {
+    background: url('https://fon.litrelax.ru/uploads/posts/2023-02/1677083363_foni-club-p-oboi-na-noutbuk-dns-5.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#inputString{
+    display: flex;
+    align-items: center;
+    top: 10px;
+    opacity: 0.9;
+    width: 50%;
+    margin: auto;
+}
+
+#inputString Button{
+    background-color: #0b5373;
+}
+
+.outputArea{
+    opacity: 0.9;
+    margin: auto;
+    width: 50%;
+    height: 733px
+}

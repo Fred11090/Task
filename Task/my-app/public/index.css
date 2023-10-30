@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    align-content: center;
+    opacity: .3;
+    color: #f9d5ad ;
+    background-color: #063853; 
+    position: static;
+    top: 0 ;
+    width: 100%;
+    height: 3vh;
+}
+
+H3 { 
+    opacity: 1;
+    color: #f9d5ad;
+    text-align: center
+}
+
+#root{
+    height: 60vh;
+    margin-top: 25px;
+}
