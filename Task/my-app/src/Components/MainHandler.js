@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import InputString from './InputString';
 import OutputArea from './OutputArea';
 
-function MainHandler() {
+const MainHandler = () => {
     const [input, setInput] = useState('');
     const [output, setOutput] = useState('');
     const [inputList, setInputList] = useState([]);

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input } from 'reactstrap';
 
-function OutputArea(props){
+const OutputArea = (props) => {
     return (
         <Input
             readOnly
